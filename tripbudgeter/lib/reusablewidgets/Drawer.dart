@@ -6,7 +6,14 @@ Widget MyDrawer(){
         child: Column(
           children: [
             Container(
-              color: const Color.fromARGB(255, 173, 184, 243),
+              decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [const Color.fromARGB(255, 218, 220, 221), const Color.fromARGB(255, 76, 76, 77)],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
+             
               width: double.infinity,
               height: 200,
               padding: EdgeInsets.only(top: 20.0),

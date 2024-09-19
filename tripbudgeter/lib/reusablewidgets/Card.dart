@@ -29,10 +29,10 @@ Widget card(Color boxcolor,String maintext, String text){
 Widget seccard(String text){
   return Card(
   child: Container(
-    height: 125,
+    height: 120,
     width: 460,
     decoration: BoxDecoration(
-      color: Colors.grey,
+      color: const Color.fromARGB(255, 209, 208, 208),
       borderRadius: BorderRadius.circular(10),
     ),
     child: Padding(

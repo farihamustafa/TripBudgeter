@@ -13,13 +13,15 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor:const Color.fromARGB(255, 82, 78, 78),
       appBar: AppBar(
-        title: Text("Home"),
+        backgroundColor: const Color.fromARGB(255, 122, 122, 122),
+        title: Text("Home", style: TextStyle(color: Colors.white),),
       ),
       drawer: MyDrawer(),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(10.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -40,46 +42,92 @@ class _HomepageState extends State<Homepage> {
                   ],
                 ),
               ),
-              SizedBox(height: 16),
-              Text(
-                "Recent Activity",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+           
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  "Recent Activity",
+                  style: TextStyle(fontSize: 18,  color: Colors.white),
+                ),
               ),
               ListView.builder(
-                physics: NeverScrollableScrollPhysics(), // Prevent scrolling
-                shrinkWrap: true, // Use only the space needed
+                physics: NeverScrollableScrollPhysics(), 
+                shrinkWrap: true,
                 itemCount: 3, 
                 itemBuilder: (context, index) {
-                  return Card(
-                    elevation: 4,
-                    margin: EdgeInsets.all(8),
-                    child: ListTile(
-                      title: Text("Activity ${index + 1}"),
-                      subtitle: Text("Description of activity ${index + 1}"),
+                  return GestureDetector(
+                    onTap: (){},
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(6)
+                      ),
+                      elevation: 4,
+                      margin: EdgeInsets.all(8),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 209, 208, 208),
+                          borderRadius: BorderRadius.circular(6)
+                        ),
+                        child: ListTile(
+                        title: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text("AFG-->PAK ${index + 1}"),
+                            Text("DATE ${index + 1}")
+                          ],
+                        ),
+                      ),
+                      ),
                     ),
                   );
                 },
               ),
-              SizedBox(height: 16),
-              Text(
-                "Active Trips",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [Text(
+                  "Active Trips",
+                  style: TextStyle(fontSize: 18, color: Colors.white),
+                ),
+                TextButton(onPressed: (){}, child: Text("See All", style: TextStyle(color: Colors.white),))
+                  ],
+                ),
               ),
-              ListView.builder(
-                physics: NeverScrollableScrollPhysics(), // Prevent scrolling
-                shrinkWrap: true, // Use only the space needed
+             ListView.builder(
+                physics: NeverScrollableScrollPhysics(), 
+                shrinkWrap: true,
                 itemCount: 3, 
                 itemBuilder: (context, index) {
-                  return Card(
-                    elevation: 4,
-                    margin: EdgeInsets.all(8),
-                    child: ListTile(
-                      title: Text("Active Trip ${index + 1}"),
-                      subtitle: Text("Details of trip ${index + 1}"),
+                  return GestureDetector(
+                    onTap: (){},
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(6)
+                      ),
+                      elevation: 4,
+                      margin: EdgeInsets.all(8),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 209, 208, 208),
+                          borderRadius: BorderRadius.circular(6)
+                        ),
+                        child: ListTile(
+                        title: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text("AFG-->PAK ${index + 1}"),
+                            Text("DATE ${index + 1}")
+                          ],
+                        ),
+                      ),
+                      ),
                     ),
                   );
                 },
               ),
+              
              
             ],
           ),
