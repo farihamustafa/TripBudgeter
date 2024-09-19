@@ -28,16 +28,15 @@ class _HomepageState extends State<Homepage> {
                 children: [
                   card(Colors.green, "Total Budget", "\$100"),
                   card(Colors.orange, "Trip Expenses", "\$200"),
-                  card(Colors.indigo, "Remaining Budget", "\$400"),
+                  card(const Color.fromARGB(255, 176, 243, 248), "Remaining Budget", "\$400"),
                 ],
               ),
+              SizedBox(height: 20,),
               Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     seccard("Planning a trip?"),
-                    SizedBox(width: 8), // Add some space between cards
-                    seccard("New Expense"),
                   ],
                 ),
               ),
@@ -81,26 +80,7 @@ class _HomepageState extends State<Homepage> {
                   );
                 },
               ),
-              SizedBox(height: 16),
-              Text(
-                "Expenses",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              ListView.builder(
-                physics: NeverScrollableScrollPhysics(), // Prevent scrolling
-                shrinkWrap: true, // Use only the space needed
-                itemCount: 3, 
-                itemBuilder: (context, index) {
-                  return Card(
-                    elevation: 4,
-                    margin: EdgeInsets.all(8),
-                    child: ListTile(
-                      title: Text("Expense ${index + 1}"),
-                      subtitle: Text("Description of expense ${index + 1}"),
-                    ),
-                  );
-                },
-              ),
+             
             ],
           ),
         ),

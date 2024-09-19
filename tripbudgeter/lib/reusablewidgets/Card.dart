@@ -3,13 +3,16 @@ import 'package:flutter/material.dart';
 Widget card(Color boxcolor,String maintext, String text){
   return  Card(
                   elevation: 5,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                   child: Container(
                     decoration: BoxDecoration(
-                    color: boxcolor,
-                      borderRadius: BorderRadius.circular(8)
+                      borderRadius: BorderRadius.circular(20),
+                      color: boxcolor,
                     ),
-                    height: 150,
-                    width: 150,
+                   height: 140,
+                   width: 140,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -26,36 +29,42 @@ Widget card(Color boxcolor,String maintext, String text){
 Widget seccard(String text){
   return Card(
   child: Container(
-    height: 130,
-    width: 220,
+    height: 125,
+    width: 460,
     decoration: BoxDecoration(
       color: Colors.grey,
       borderRadius: BorderRadius.circular(10),
     ),
     child: Padding(
       padding: const EdgeInsets.all(10.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
-            child: Text(
-              text,
-              style: TextStyle(color: Colors.white, fontSize: 27),
-              textAlign: TextAlign.center,
+            child: Padding(
+              padding: const EdgeInsets.only(right: 160),
+              child: Text(
+                text,
+                style: TextStyle(color: Colors.black, fontSize: 30, fontWeight: FontWeight.bold),
+                         
+              ),
             ),
           ),
-          SizedBox(width: 10), 
-          TextButton(
-            onPressed: () {},
-            child: Text(
-              "Add",
-              style: TextStyle(color: Colors.black),
-            ),
-            style: TextButton.styleFrom(
-              backgroundColor: Colors.white,
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(5),
+          
+          Padding(
+            padding: const EdgeInsets.only(left: 200),
+            child: TextButton(
+              onPressed: () {},
+              child: Text(
+                "Add Now",
+                style: TextStyle(color: Colors.white),
+              ),
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.green,
+                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 5),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5),
+                ),
               ),
             ),
           ),
